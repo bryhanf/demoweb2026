@@ -11,3 +11,12 @@ Route::get('/', function () {
 Route::get('/hola-mundo', function () {
     return view('hola');
 });
+
+// Al principio de routes/web.php (si no está ya)
+use App\Http\Controllers\ContactoController;
+
+// ... tus otras rutas ...
+
+// Rutas del Commit 3
+Route::get('/formulario-contacto', [ContactoController::class, 'formularioContacto']);
+Route::post('/recibe-formulario', [ContactoController::class, 'recibeFormulario']);
